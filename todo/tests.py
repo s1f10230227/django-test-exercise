@@ -93,7 +93,7 @@ class TodoViewTestCase(TestCase):
         self.assertEqual(response.context['task'], task)
 
     def test_detail_get_fail(self):
-        client=Client()
-        response=client.get('/1/')
+        client = Client()
+        response = client.get('/1/')
 
         self.assertEqual(response.status_code, 404)
