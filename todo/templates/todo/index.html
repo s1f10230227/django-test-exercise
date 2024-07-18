@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <h1>タスク管理アプリ</h1>
+    <h1 id="Top">タスク管理アプリ</h1>
     <p>下の欄からタスクを提出できます</p>
     <form action="{% url 'index' %}" method="post">
       {% csrf_token %}
@@ -32,6 +32,7 @@
       <a href="{% url 'index' %}?order=post">投稿日でソートする</a>
     </div>
 
+    {% if tasks %}
     {% for task in tasks %}
     <div class="text">
       <h2><a href="{% url 'detail' task.id %}">{{ task.title }}</a></h2>
@@ -48,6 +49,10 @@
       </ul>
     </div>
     {% endfor %}
+    {% else %}
+    <h2>まだ何も投稿されていないようです</h2>
+    {% endif %}
+    <a href="#Top">上まで戻る</a>
   </body>
 
 </html>
