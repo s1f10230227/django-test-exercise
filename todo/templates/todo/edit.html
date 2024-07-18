@@ -18,11 +18,15 @@
         <input id="titleInput" name="title" type="text" placeholder="タイトルを入れてください" value="{{ task.title }}">
       </div>
       <div>
+        <p>追加で書き込みたいことを入力</p>
+        <textarea name="body" id="bodyinput" placeholder="書き込みたいことを入力" rows="10" cols="50">{{ task.body }}</textarea>
+      </div>
+      <div>
         <label for="dueInput">締め切り:</label><br>
         <input id="dueInput" name="due_at" type="datetime-local" value="{{ task.due_at |date:"Y-m-d H:i" }}">
       </div>
       <div>
-        <button type="submit">提出</button>
+        <button type="submit">変更</button>
       </div>
     </form>
     <br>
