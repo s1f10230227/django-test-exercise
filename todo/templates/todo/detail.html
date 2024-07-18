@@ -10,15 +10,16 @@
 
   <body>
     <h1>{{ task.title }}</h1>
+    <p>{{ task.body }}</p>
     <ul>
       <li>投稿日: {{ task.posted_at }}</li>
       {% if task.due_at %}
       <li>締め切り: {{ task.due_at }}</li>
       {% endif %}
       {% if task.completed %}
-      <li>進捗: 完了済み</li>
+      <li>進捗: <font color="blue">完了済み</font></li>
       {% else %}
-      <li>進捗: 未完了</li>
+      <li>進捗: <font color="red">未完了</font></li>
       {% endif %}
     </ul>
     <div>

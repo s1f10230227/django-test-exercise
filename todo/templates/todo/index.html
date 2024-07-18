@@ -18,11 +18,15 @@
         <input id="titleInput" name="title" type="text" placeholder="タイトルを入れてください">
       </div>
       <div>
+        <p>追加で書き込みたいことを入力</p>
+        <textarea name="body" placeholder="書き込みたいことを入力" id="bodyinput" rows="10" cols="50"></textarea>
+      </div>
+      <div>
         <label for="dueInput">締め切り</label><br>
         <input id="dueInput" name="due_at" type="datetime-local">
       </div>
       <div>
-        <button type="submit">提出</button>
+        <button type="submit">登録</button>
       </div>
     </form>
     <br>
@@ -42,9 +46,9 @@
         <li>締め切り: {{ task.due_at }}</li>
         {% endif %}
         {% if task.completed %} 
-        <li>進捗: 完了済み</li>
+        <li>進捗: <font color="blue">完了済み</font></li>
         {% else %}
-        <li>進捗: 未完了</li>
+        <li>進捗: <font color="red">未完了</font></li>
         {% endif %}
       </ul>
     </div>
